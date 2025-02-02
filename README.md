@@ -45,13 +45,6 @@ $$
 D = \| \mathbf{D} \| = \sqrt{D_x^2 + D_y^2 + D_z^2}
 $$
 
-Where:  
-- \( q_i \) is the **partial charge** of atom \( i \)  
-- \( \mathbf{r}_i \) is the **position vector** of atom \( i \)  
-
-
-The magnitude of the dipole moment \( D \) is given by:  
-
 
 To convert the dipole moment from **atomic units (e·bohr)** to **Debye**, we use:  
 
