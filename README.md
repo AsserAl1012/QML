@@ -68,16 +68,16 @@ The QNN is implemented using **PennyLane** and consists of the following layers:
 1. **Input Encoding:**  
    Each feature \( x_i \) is encoded into the quantum state using **rotation gates**:  
 
-   $$
-   \text{RY}(x_i), \quad \text{RX}(x_i), \quad \text{RZ}(x_i)
-   $$  
+$$
+\text{RY}(x_i), \quad \text{RX}(x_i), \quad \text{RZ}(x_i)
+$$  
 
 2. **Parameterized Layers:**  
    Multiple layers of **parameterized rotations** and **entanglement gates** are applied to the qubits:  
 
-   $$
-   \text{RX}(\theta_i), \quad \text{RY}(\theta_i), \quad \text{RZ}(\theta_i)
-   $$  
+$$
+\text{RX}(\theta_i), \quad \text{RY}(\theta_i), \quad \text{RZ}(\theta_i)
+$$  
 
    **Entanglement gates:** We use both **CNOT** and **CZ gates** to create quantum correlations:  
 
@@ -87,9 +87,9 @@ The QNN is implemented using **PennyLane** and consists of the following layers:
 3. **Measurement:**  
    The output of the circuit is obtained by measuring the **expectation value** of the **Pauli-Z operator**:  
 
-   $$
-   \langle \sigma_z \rangle = \text{expval}(\text{PauliZ}(0))
-   $$  
+$$
+\langle \sigma_z \rangle = \text{expval}(\text{PauliZ}(0))
+$$  
 
 ---
 
@@ -124,9 +124,9 @@ Where:
 2. **Optimization Algorithm:**  
    - Use the **Adam optimizer** with a dynamically decaying learning rate:  
 
-   $$
-   \eta_t = \frac{\eta_0}{1 + \text{decay rate} \cdot t}
-   $$  
+$$
+\eta_t = \frac{\eta_0}{1 + \text{decay rate} \cdot t}
+$$  
 
 3. **Batch Training:**  
    - Train the model using mini-batches of 50 samples to optimize memory usage and improve convergence.  
@@ -142,31 +142,31 @@ After training, the model is evaluated using:
 
 1. **Huber Loss:** Combines MSE and MAE for robust evaluation:  
 
-   $$
-   L(y, \hat{y}) = 
-   \begin{cases} 
-   \frac{1}{2} (y - \hat{y})^2 & \text{for } |y - \hat{y}| \leq \delta \\ 
-   \delta \cdot |y - \hat{y}| - \frac{1}{2} \delta^2 & \text{for } |y - \hat{y}| > \delta  
-   \end{cases}
-   $$  
+$$
+L(y, \hat{y}) = 
+\begin{cases} 
+\frac{1}{2} (y - \hat{y})^2 & \text{for } |y - \hat{y}| \leq \delta \\ 
+\delta \cdot |y - \hat{y}| - \frac{1}{2} \delta^2 & \text{for } |y - \hat{y}| > \delta  
+\end{cases}
+$$  
 
 2. **Mean Squared Error (MSE):** Measures the average squared difference between actual and predicted dipole moments:  
 
-   $$
-   \text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
-   $$  
+$$
+\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+$$  
 
-3. **Mean Absolute Error (MAE):** Measures the average absolute difference:  
+3. **Mean Absolute Error (MAE):** Measures the average absolute difference:
 
-   $$
-   \text{MAE} = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|
-   $$  
+$$
+\text{MAE} = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|
+$$  
 
 4. **R² Score:** Evaluates how well the model explains the variance in the data:  
 
-   $$
-   R^2 = 1 - \frac{\sum_{i=1}^{n} (y_i - \hat{y}_i)^2}{\sum_{i=1}^{n} (y_i - \bar{y})^2}
-   $$  
+$$
+R^2 = 1 - \frac{\sum_{i=1}^{n} (y_i - \hat{y}_i)^2}{\sum_{i=1}^{n} (y_i - \bar{y})^2}
+$$  
  
 ---
 
