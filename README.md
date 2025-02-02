@@ -110,9 +110,9 @@ Where:
 1. **Weight Initialization:**  
    - Initialize weights for the 5-layer QNN:  
 
-   $$
-   \text{weights} \in \mathbb{R}^{6 \times 3 \times n_{\text{qubits}}}
-   $$  
+$$
+\text{weights} \in \mathbb{R}^{6 \times 3 \times n_{\text{qubits}}}
+$$  
 
 2. **Optimization Algorithm:**  
    - Use the **Adam optimizer** with a dynamically decaying learning rate:  
